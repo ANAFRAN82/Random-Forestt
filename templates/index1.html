@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transformaciones Afines - Cargar Imagen desde Archivo</title>
+</head>
+<body>
+    <h1>Transformaciones Afines - Aplicar a una Imagen desde Archivo</h1>
+
+    <form action="/transform_image" method="post" enctype="multipart/form-data">
+        <label for="file">Subir Imagen:</label>
+        <input type="file" id="file" name="file" accept="/home/anita/Documentos/miEntorno/jpeg(1)" required>
+
+        <label for="transformation">Tipo de Transformación:</label>
+        <select id="transformation" name="transformation">
+            <option value="translate">Traslación</option>
+            <option value="shear">Cizallamiento</option>
+            <option value="rotate">Rotación 45°</option>
+            <option value="scale">Escalado 1.5x</option>
+        </select>
+        
+        <button type="submit">Aplicar Transformación</button>
+    </form>
+
+    <h2>Resultado de la Transformación</h2>
+    <img id="transformed-image" src="" alt="Imagen Transformada" style="display:none;">
+</body>
+</html>

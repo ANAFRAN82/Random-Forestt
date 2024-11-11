@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados del Modelo</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            max-width: 800px;
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        h2 {
+            color: #34495e;
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+        li {
+            background-color: #ecf0f1;
+            margin: 5px 0;
+            padding: 10px;
+            border-radius: 5px;
+            font-weight: bold;
+            color: #2c3e50;
+            display: flex;
+            justify-content: space-between;
+        }
+        li span {
+            font-weight: normal;
+            color: #7f8c8d;
+        }
+        .img-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .img-container img {
+            max-width: 100%;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div calss="container">
+        <h1>Resultados del Modelo de Regresión</h1>
+
+        <h2>Métricas</h2>
+        <ul>
+            <li>MSE (Entrenamiento): <span>{{ metrics.mse_train }}</span></li>
+            <li>MSE (Test): <span>{{ metrics.mse_test }}</span></li>
+            <li>MAE (Entrenamiento): <span>{{ metrics.mae_train }}</span></li>
+            <li>MAE (Test): <span>{{ metrics.mae_test }}</span></li>
+            <li>R2 (Entrenamiento): <span>{{ metrics.r2_train }}</span></li>
+            <li>R2 (Test): <span>{{ metrics.r2_test }}</span></li>
+        </ul>
+
+        <h2>Gráficas</h2>
+        <div calss="img-container">
+            <img src="data:image/png;base64,{{ plot }}" alt="Gráficas Real vs Predicción">
+        </div>
+    </div>
+</body>
+</html>
